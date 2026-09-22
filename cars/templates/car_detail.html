@@ -78,9 +78,7 @@
     a {
       text-decoration: none !important;
     }
-
   </style>
-
   <div class="car-card">
       <img src="{{ object.photo.url }}" alt="{{ object.model }} - {{ object.brand }}">
       <h2>{{ object.brand }} {{ object.model }}</h2>
@@ -89,5 +87,8 @@
       <p><strong>Placa:</strong> {{ object.plate }}</p>
       <p><strong>Preço:</strong> R$ {{ object.value }}</p>
   </div>
-
+  <div class="buttons-container">
+    <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Editar</a>
+    <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar</a>
+  </div>
 {% endblock %}
