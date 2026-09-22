@@ -4,3 +4,4 @@ venv/
 *.gitignore
 media/
 db.*
+migrations
