@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Brand(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
@@ -20,3 +21,18 @@ class Car(models.Model):
 
     def __str__(self):
         return self.model
+
+
+class CarInventory(models.Model):
+    id = models.AutoField(primary_key=True)
+    cars_count = models.IntegerField()
+    cars_value = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        # Ordenação Decrescente
+        ordering = ['-created_at']
+
+    
+    def __str__(self):
+        return f'{self.cars_count} - {self.cars_value}'
