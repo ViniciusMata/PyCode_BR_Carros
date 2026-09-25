@@ -31,6 +31,7 @@ class NewCarCreateView(CreateView):
     template_name = 'new_car.html'
     success_url = '/cars/'
 
+
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class CarUpdateView(UpdateView):
     model = Car
@@ -39,6 +40,7 @@ class CarUpdateView(UpdateView):
     
     def get_success_url(self):
         return reverse_lazy('car_detail', kwargs={'pk': self.object.pk})
+
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class CarDeleteView(DeleteView):
