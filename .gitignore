@@ -3,6 +3,3 @@ __pycache__/
 *.pyc
 media
 db.*
-
-/accounts/migrations/
-/car/migrations/
